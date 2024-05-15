@@ -24,5 +24,7 @@
 **/*.sr
 **/*.map
 
-# current build
-./build/*
+# current build reports
+build/design.rpt
+build/stats.txt
+
