@@ -8891,7 +8891,7 @@ ABC: Participating nodes from the first network   =      21. (  56.76 % of nodes
 ABC: Participating nodes from the second network  =      38. ( 102.70 % of nodes)
 ABC: Node pairs (any polarity)                    =      21. (  56.76 % of names can be moved)
 ABC: Node pairs (same polarity)                   =      13. (  35.14 % of names can be moved)
-ABC: Total runtime =     0.01 sec
+ABC: Total runtime =     0.00 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 19.39.1.2. Re-integrating ABC results.
@@ -8970,7 +8970,7 @@ ABC: Participating nodes from the first network   =     293. (  45.71 % of nodes
 ABC: Participating nodes from the second network  =     345. (  53.82 % of nodes)
 ABC: Node pairs (any polarity)                    =     293. (  45.71 % of names can be moved)
 ABC: Node pairs (same polarity)                   =     113. (  17.63 % of names can be moved)
-ABC: Total runtime =     0.05 sec
+ABC: Total runtime =     0.04 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 19.39.4.2. Re-integrating ABC results.
@@ -9081,7 +9081,7 @@ ABC: Participating nodes from the first network   =      12. (  85.71 % of nodes
 ABC: Participating nodes from the second network  =      12. (  85.71 % of nodes)
 ABC: Node pairs (any polarity)                    =      12. (  85.71 % of names can be moved)
 ABC: Node pairs (same polarity)                   =      12. (  85.71 % of names can be moved)
-ABC: Total runtime =     0.01 sec
+ABC: Total runtime =     0.00 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 19.39.7.2. Re-integrating ABC results.
@@ -9333,7 +9333,7 @@ ABC: Participating nodes from the first network   =      69. (  84.15 % of nodes
 ABC: Participating nodes from the second network  =      69. (  84.15 % of nodes)
 ABC: Node pairs (any polarity)                    =      69. (  84.15 % of names can be moved)
 ABC: Node pairs (same polarity)                   =      67. (  81.71 % of names can be moved)
-ABC: Total runtime =     0.01 sec
+ABC: Total runtime =     0.00 sec
 ABC: + write_blif <abc-temp-dir>/output.blif 
 
 19.39.19.2. Re-integrating ABC results.
@@ -10396,6 +10396,6 @@ found and reported 4 problems.
 20. Executing JSON backend.
 
 Warnings: 4 unique messages, 4 total
-End of script. Logfile hash: a5fbd2ab89, CPU: user 17.77s system 0.57s, MEM: 196.05 MB peak
+End of script. Logfile hash: 836a0f7a2d, CPU: user 12.09s system 0.31s, MEM: 195.99 MB peak
 Yosys 0.9+2406 (git sha1 UNKNOWN, clang 10.0.0-4ubuntu1 -fPIC -Os)
-Time spent: 20% 15x opt_rmdff (3 sec), 20% 22x opt_clean (3 sec), ...
+Time spent: 21% 22x opt_clean (2 sec), 19% 15x opt_rmdff (2 sec), ...
