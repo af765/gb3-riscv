@@ -52,6 +52,7 @@ Info: 	      ICESTORM_SPRAM:     0/    4     0%
 
 Info: Placed 10 cells based on constraints.
 <<<<<<< HEAD
+<<<<<<< HEAD
 Info: Creating initial placement for remaining 3097 cells.
 Info:   initial placement placed 500/3097 cells
 Info:   initial placement placed 1000/3097 cells
@@ -62,6 +63,8 @@ Info:   initial placement placed 3000/3097 cells
 Info:   initial placement placed 3097/3097 cells
 Info: Initial placement time 1.53s
 =======
+=======
+>>>>>>> 8087fc1 (working 12MHz clock)
 Info: Creating initial placement for remaining 2686 cells.
 Info:   initial placement placed 500/2686 cells
 Info:   initial placement placed 1000/2686 cells
@@ -70,6 +73,9 @@ Info:   initial placement placed 2000/2686 cells
 Info:   initial placement placed 2500/2686 cells
 Info:   initial placement placed 2686/2686 cells
 Info: Initial placement time 0.76s
+<<<<<<< HEAD
+>>>>>>> 8087fc1 (working 12MHz clock)
+=======
 >>>>>>> 8087fc1 (working 12MHz clock)
 Info: Running simulated annealing placer.
 Info:   at iteration #1: temp = 1.000000, timing cost = 4170, wirelen = 67243
@@ -109,6 +115,7 @@ Info:   at iteration #165: temp = 0.000086, timing cost = 2031, wirelen = 22545
 Info:   at iteration #170: temp = 0.000082, timing cost = 2193, wirelen = 21327
 Info: Legalising relative constraints...
 <<<<<<< HEAD
+<<<<<<< HEAD
 Info:     moved 47 cells, 29 unplaced (after legalising chains)
 Info:        average distance 0.774771
 Info:        maximum distance 1.414214
@@ -142,6 +149,8 @@ Info:   at iteration #285: temp = 0.000000, timing cost = 1139, wirelen = 11571
 Info:   at iteration #288: temp = 0.000000, timing cost = 1139, wirelen = 11571 
 Info: SA placement time 50.34s
 =======
+=======
+>>>>>>> 8087fc1 (working 12MHz clock)
 Info:     moved 85 cells, 44 unplaced (after legalising chains)
 Info:        average distance 1.691589
 Info:        maximum distance 3.162278
@@ -172,6 +181,9 @@ Info:   at iteration #275: temp = 0.000000, timing cost = 1252, wirelen = 10484
 Info:   at iteration #280: temp = 0.000000, timing cost = 1239, wirelen = 10477
 Info:   at iteration #284: temp = 0.000000, timing cost = 1239, wirelen = 10478 
 Info: SA placement time 25.70s
+<<<<<<< HEAD
+>>>>>>> 8087fc1 (working 12MHz clock)
+=======
 >>>>>>> 8087fc1 (working 12MHz clock)
 
 Info: Max frequency for clock               'clk': 17.15 MHz (PASS at 12.00 MHz)
@@ -212,6 +224,7 @@ Info: Routing 8269 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
 <<<<<<< HEAD
+<<<<<<< HEAD
 Info:       1000 |       30        969 |   30   969 |      8782|       0.17       0.17|
 Info:       2000 |      143       1856 |  113   887 |      7969|       0.23       0.40|
 Info:       3000 |      360       2639 |  217   783 |      7349|       0.22       0.63|
@@ -234,6 +247,26 @@ Info:      18596 |     5116      13480 |  151   446 |         0|       0.44     
 Info: Routing complete.
 Info: Router1 time 6.97s
 Info: Checksum: 0xc7d2a086
+=======
+Info:       1000 |       21        978 |   21   978 |      7292|       0.10       0.10|
+Info:       2000 |      128       1871 |  107   893 |      6482|       0.15       0.25|
+Info:       3000 |      330       2669 |  202   798 |      5804|       0.14       0.39|
+Info:       4000 |      648       3351 |  318   682 |      5255|       0.15       0.53|
+Info:       5000 |     1068       3931 |  420   580 |      4832|       0.17       0.70|
+Info:       6000 |     1205       4794 |  137   863 |      4031|       0.17       0.87|
+Info:       7000 |     1366       5633 |  161   839 |      3321|       0.20       1.07|
+Info:       8000 |     1499       6500 |  133   867 |      2533|       0.18       1.25|
+Info:       9000 |     1729       7270 |  230   770 |      1919|       0.23       1.48|
+Info:      10000 |     2081       7918 |  352   648 |      1430|       0.27       1.75|
+Info:      11000 |     2481       8518 |  400   600 |      1125|       0.28       2.03|
+Info:      12000 |     2898       9101 |  417   583 |       870|       0.31       2.33|
+Info:      13000 |     3363       9636 |  465   535 |       671|       0.32       2.65|
+Info:      14000 |     3646      10353 |  283   717 |       113|       0.38       3.03|
+Info:      14190 |     3699      10491 |   53   138 |         0|       0.09       3.13|
+Info: Routing complete.
+Info: Router1 time 3.13s
+Info: Checksum: 0x8db5bd86
+>>>>>>> 8087fc1 (working 12MHz clock)
 =======
 Info:       1000 |       21        978 |   21   978 |      7292|       0.10       0.10|
 Info:       2000 |      128       1871 |  107   893 |      6482|       0.15       0.25|
