@@ -53,7 +53,7 @@ module top (led);
 
 
 	/*
-	 *	Use the iCE40's hard primitive for the clock source. 12MHz.
+	 *	Use the iCE40's hard primitive for the clock source.
 	 */
 	SB_HFOSC OSCInst0 (
 		.CLKHFEN(ENCLKHF),
