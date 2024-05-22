@@ -43,16 +43,6 @@
  *		and program counter increment among other things.
  */
 
-
-/*
-module adder(input1, input2, out);
-	input [31:0]	input1;
-	input [31:0]	input2;
-	output [31:0]	out;
-
-	assign		out = input1 + input2;
-endmodule
-*/
 module adder_1_bit(input1, input2, cin, out, cout);
 	input input1;
 	input input2;
@@ -64,23 +54,65 @@ module adder_1_bit(input1, input2, cin, out, cout);
 	assign cout = (input1 && input2) || (input1 && cin) || (input2 && cin);
 endmodule
 
-module adder_8_bit(input1, input2, cin, out, cout);
-	input [7:0] input1;
-	input [7:0] input2;
+module adder_4_bit(input1, input2, cin, out, cout, g, p);
+	input [3:0] input1;
+	input [3:0] input2;
 	input cin;
-	output [7:0] out;
+	output [3:0] out;
+	output cout;
+ 
+	wire [4:0] c;
+	output [3:0] g, p;
+
+	assign g = input1 & input2; //bitwise and
+
+	assign p = input1 | input2; //bitwise or
+
+	assign c[0] = cin;
+	assign c[1] = g[0] | (p[0] & c[0]); 
+	assign c[2] = g[1] | (p[1] & c[1]); 
+	assign c[3] = g[2] | (p[2] & c[2]); 
+	assign c[4] = g[3] | (p[3] & c[3]); 
+
+	adder_1_bit a0 (input1[0], input2[0], c[0], out[0]);
+	adder_1_bit a1 (input1[1], input2[1], c[1], out[1]);
+	adder_1_bit a2 (input1[2], input2[2], c[2], out[2]);
+	adder_1_bit a3 (input1[3], input2[3], c[3], out[3]);
+	assign cout = c[4];
+endmodule
+
+module adder_16_bit(input1, input2, cin, out, cout);
+	input [15:0] input1;
+	input [15:0] input2;
+	input cin;
+	output [15:0] out;
 	output cout;
 
-	wire c1, c2, c3, c4, c5, c6, c7;
+	wire[4:0] C;
+	wire [3:0] G, P;
+	wire [15:0] g, p;
 
-	adder_1_bit a0 (input1[0], input2[0], cin, out[0], c1);
-	adder_1_bit a1 (input1[1], input2[1], c1, out[1], c2);
-	adder_1_bit a2 (input1[2], input2[2], c2, out[2], c3);
-	adder_1_bit a3 (input1[3], input2[3], c3, out[3], c4);
-	adder_1_bit a4 (input1[4], input2[4], c4, out[4], c5);
-	adder_1_bit a5 (input1[5], input2[5], c5, out[5], c6);
-	adder_1_bit a6 (input1[6], input2[6], c6, out[6], c7);
-	adder_1_bit a7 (input1[7], input2[7], c7, out[7], cout);
+	assign G[0] = g[3] | (p[3] & g[2]) | (p[3] & p[2] & g[1]) | (p[3] & p[2] & p[1] & g[0]);
+	assign G[1] = g[7] | (p[7] & g[6]) | (p[7] & p[6] & g[5]) | (p[7] & p[6] & p[5] & g[4]);
+	assign G[2] = g[11] | (p[11] & g[10]) | (p[11] & p[10] & g[9]) | (p[11] & p[10] & p[9] & g[8]);
+	assign G[3] = g[15] | (p[15] & g[14]) | (p[15] & p[14] & g[13]) | (p[15] & p[14] & p[13] & g[12]);
+
+	assign P[0] = p[0] & p[1] & p[2] & p[3]; 
+	assign P[1] = p[4] & p[5] & p[6] & p[7]; 
+	assign P[2] = p[8] & p[9] & p[10] & p[11]; 
+	assign P[3] = p[12] & p[13] & p[14] & p[15]; 
+
+	assign C[0] = cin;
+	assign C[1] = G[0] | (P[0] & C[0]); 
+	assign C[2] = G[1] | (P[1] & G[0]) | (P[1] & P[0] & C[0]); 
+	assign C[3] = G[2] | (P[2] & G[1]) | (P[2] & P[1] & G[0]) | (P[2] & P[1] & P[0] & C[0]); 
+	assign C[4] = G[3] | (P[3] & G[2]) | (P[3] & P[2] & G[1]) | (P[3] & P[2] & P[1] & G[0]) | (P[3] & P[2] & P[1] & P[0] & C[0]); 
+	
+	adder_4_bit a0 (.input1(input1[3:0]), .input2(input2[3:0]), .cin(C[0]), .out(out[3:0]), .g(g[3:0]), .p(p[3:0]));
+	adder_4_bit a1 (.input1(input1[7:4]), .input2(input2[7:4]), .cin(C[1]), .out(out[7:4]), .g(g[7:4]), .p(p[7:4]));
+	adder_4_bit a2 (.input1(input1[11:8]), .input2(input2[11:8]), .cin(C[2]), .out(out[11:8]), .g(g[11:8]), .p(p[11:8]));
+	adder_4_bit a3 (.input1(input1[15:12]), .input2(input2[15:12]), .cin(C[3]), .out(out[15:12]), .g(g[15:12]), .p(p[15:12]));
+	assign cout = C[4];
 endmodule
 
 module adder(input1, input2, out);
@@ -88,21 +120,8 @@ module adder(input1, input2, out);
 	input [31:0] input2;
 	output [31:0] out;
 
-	wire[4:0] C;
-	wire [3:0] G, P;
+	wire c1, c2;
 
-	assign G = input1 & input2; //bitwise and
-
-	assign P = input1 | input2; //bitwise or
-
-	assign C[0] = 1'b0;
-	assign C[1] = G[0] | (P[0] & C[0]); 
-	assign C[2] = G[1] | (P[1] & C[1]); 
-	assign C[3] = G[2] | (P[2] & C[2]); 
-	//assign C[4] = G[3] | (P[3] & C[3]); Carry out is ignored as in orginal adder
-
-	adder_8_bit a0 (input1[7:0], input2[7:0], C[0], out[7:0]);
-	adder_8_bit a1 (input1[15:8], input2[15:8], C[1], out[15:8]);
-	adder_8_bit a2 (input1[23:16], input2[23:16], C[2], out[23:16]);
-	adder_8_bit a3 (input1[31:24], input2[31:24], C[3], out[31:24]);
+	adder_16_bit a0 (input1[15:0], input2[15:0], 1'b0, out[15:0], c1);
+	adder_16_bit a1 (input1[31:16], input2[31:16], c1, out[31:16], c2);
 endmodule
