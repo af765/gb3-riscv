@@ -50,8 +50,11 @@ module adder_1_bit(input1, input2, cin, out, cout);
 	output out;
 	output cout;
 
+	assign {cout, out} = input1 + input2 + cin;
+	/*
 	assign out = input1 ^ input2 ^ cin;
 	assign cout = (input1 && input2) || (input1 && cin) || (input2 && cin);
+	*/
 endmodule
 
 module adder_4_bit(input1, input2, cin, out, cout, g, p);
@@ -69,10 +72,10 @@ module adder_4_bit(input1, input2, cin, out, cout, g, p);
 	assign p = input1 | input2; //bitwise or
 
 	assign c[0] = cin;
-	assign c[1] = g[0] | (p[0] & c[0]); 
-	assign c[2] = g[1] | (p[1] & c[1]); 
-	assign c[3] = g[2] | (p[2] & c[2]); 
-	assign c[4] = g[3] | (p[3] & c[3]); 
+	assign c[1] = g[0] | (p[0] & cin); 
+	assign c[2] = g[1] | (p[1] & g[0]) | (p[1] & p[0] & cin); 
+	assign c[3] = g[2] | (p[2] & g[1]) | (p[2] & p[1] & g[0]) | (p[2] & p[1] & p[0] & cin); 
+	assign c[4] = g[3] | (p[3] & g[2]) | (p[3] & p[2] & g[1]) | (p[3] & p[2] & p[1] & g[0]) | (p[3] & p[2] & p[1] & p[0] & cin); 
 
 	adder_1_bit a0 (input1[0], input2[0], c[0], out[0]);
 	adder_1_bit a1 (input1[1], input2[1], c[1], out[1]);
@@ -125,4 +128,22 @@ module adder(input1, input2, out, cin);
 
 	adder_16_bit a0 (input1[15:0], input2[15:0], cin, out[15:0], c1);
 	adder_16_bit a1 (input1[31:16], input2[31:16], c1, out[31:16]);
+endmodule
+
+module adder_1cla(input1, input2, out, cin);
+	input [31:0] input1;
+	input [31:0] input2;
+	input cin;
+	output [31:0] out;
+
+	wire c1, c2, c3, c4, c5, c6, c7;
+
+	adder_4_bit a0 (.input1(input1[3:0]), .input2(input2[3:0]), .cin(cin), .out(out[3:0]), .cout(c1));
+	adder_4_bit a1 (.input1(input1[7:4]), .input2(input2[7:4]), .cin(c1), .out(out[7:4]), .cout(c2));
+	adder_4_bit a2 (.input1(input1[11:8]), .input2(input2[11:8]), .cin(c2), .out(out[11:8]), .cout(c3));
+	adder_4_bit a3 (.input1(input1[15:12]), .input2(input2[15:12]), .cin(c3), .out(out[15:12]), .cout(c4));
+	adder_4_bit a4 (.input1(input1[19:16]), .input2(input2[19:16]), .cin(c4), .out(out[19:16]), .cout(c5));
+	adder_4_bit a5 (.input1(input1[23:20]), .input2(input2[23:20]), .cin(c5), .out(out[23:20]), .cout(c6));
+	adder_4_bit a6 (.input1(input1[27:24]), .input2(input2[27:24]), .cin(c6), .out(out[27:24]), .cout(c7));
+	adder_4_bit a7 (.input1(input1[31:28]), .input2(input2[31:28]), .cin(c7), .out(out[31:28]));
 endmodule
