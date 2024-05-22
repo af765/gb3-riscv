@@ -51,10 +51,6 @@ module adder_1_bit(input1, input2, cin, out, cout);
 	output cout;
 
 	assign {cout, out} = input1 + input2 + cin;
-	/*
-	assign out = input1 ^ input2 ^ cin;
-	assign cout = (input1 && input2) || (input1 && cin) || (input2 && cin);
-	*/
 endmodule
 
 module adder_4_bit(input1, input2, cin, out, cout, g, p);
@@ -106,10 +102,10 @@ module adder_16_bit(input1, input2, cin, out, cout);
 	assign P[3] = p[12] & p[13] & p[14] & p[15]; 
 
 	assign C[0] = cin;
-	assign C[1] = G[0] | (P[0] & C[0]); 
-	assign C[2] = G[1] | (P[1] & G[0]) | (P[1] & P[0] & C[0]); 
-	assign C[3] = G[2] | (P[2] & G[1]) | (P[2] & P[1] & G[0]) | (P[2] & P[1] & P[0] & C[0]); 
-	assign C[4] = G[3] | (P[3] & G[2]) | (P[3] & P[2] & G[1]) | (P[3] & P[2] & P[1] & G[0]) | (P[3] & P[2] & P[1] & P[0] & C[0]); 
+	assign C[1] = G[0] | (P[0] & cin); 
+	assign C[2] = G[1] | (P[1] & G[0]) | (P[1] & P[0] & cin); 
+	assign C[3] = G[2] | (P[2] & G[1]) | (P[2] & P[1] & G[0]) | (P[2] & P[1] & P[0] & cin); 
+	assign C[4] = G[3] | (P[3] & G[2]) | (P[3] & P[2] & G[1]) | (P[3] & P[2] & P[1] & G[0]) | (P[3] & P[2] & P[1] & P[0] & cin); 
 	
 	adder_4_bit a0 (.input1(input1[3:0]), .input2(input2[3:0]), .cin(C[0]), .out(out[3:0]), .g(g[3:0]), .p(p[3:0]));
 	adder_4_bit a1 (.input1(input1[7:4]), .input2(input2[7:4]), .cin(C[1]), .out(out[7:4]), .g(g[7:4]), .p(p[7:4]));
