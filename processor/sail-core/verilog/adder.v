@@ -115,13 +115,14 @@ module adder_16_bit(input1, input2, cin, out, cout);
 	assign cout = C[4];
 endmodule
 
-module adder(input1, input2, out);
+module adder(input1, input2, out, cin);
 	input [31:0] input1;
 	input [31:0] input2;
+	input cin;
 	output [31:0] out;
 
-	wire c1, c2;
+	wire c1;
 
-	adder_16_bit a0 (input1[15:0], input2[15:0], 1'b0, out[15:0], c1);
-	adder_16_bit a1 (input1[31:16], input2[31:16], c1, out[31:16], c2);
+	adder_16_bit a0 (input1[15:0], input2[15:0], cin, out[15:0], c1);
+	adder_16_bit a1 (input1[31:16], input2[31:16], c1, out[31:16]);
 endmodule

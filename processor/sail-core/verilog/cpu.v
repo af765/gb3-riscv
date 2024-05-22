@@ -185,7 +185,8 @@ module cpu(
 	adder pc_adder(
 			.input1(32'b100),
 			.input2(pc_out),
-			.out(pc_adder_out)
+			.out(pc_adder_out),
+			.cin(1'b0)
 		);
 
 	program_counter PC(
@@ -334,7 +335,8 @@ module cpu(
 	adder addr_adder(
 			.input1(addr_adder_mux_out),
 			.input2(id_ex_out[139:108]),
-			.out(addr_adder_sum)
+			.out(addr_adder_sum),
+			.cin(1'b0)
 		);
 
 	mux2to1 alu_mux(
