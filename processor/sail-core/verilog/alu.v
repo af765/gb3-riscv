@@ -61,6 +61,11 @@ module alu(ALUctl, A, B, ALUOut, Branch_Enable);
 	output reg [31:0]	ALUOut;
 	output reg		Branch_Enable;
 
+	wire [31:0] dsp_addition;
+	wire [31:0] dsp_subtraction;
+
+	dsp dig_sig_pro(.A(A), .B(B), .add(dsp_addition), .sub(dsp_subtraction));
+
 	/*
 	 *	This uses Yosys's support for nonzero initial values:
 	 *
@@ -90,7 +95,7 @@ module alu(ALUctl, A, B, ALUOut, Branch_Enable);
 			/*
 			 *	ADD (the fields also match AUIPC, all loads, all stores, and ADDI)
 			 */
-			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	ALUOut = A + B;
+			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	ALUOut = dsp_addition;
 
 			/*
 			 *	SUBTRACT (the fields also matches all branches)
