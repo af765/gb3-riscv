@@ -61,6 +61,9 @@ module alu(ALUctl, A, B, ALUOut, Branch_Enable);
 	output reg [31:0]	ALUOut;
 	output reg		Branch_Enable;
 
+	wire [31:0] add;
+	adder adding (A, B, add, 1'b0);
+
 	/*
 	 *	This uses Yosys's support for nonzero initial values:
 	 *
@@ -90,7 +93,7 @@ module alu(ALUctl, A, B, ALUOut, Branch_Enable);
 			/*
 			 *	ADD (the fields also match AUIPC, all loads, all stores, and ADDI)
 			 */
-			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	ALUOut = A + B;
+			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	ALUOut = add;
 
 			/*
 			 *	SUBTRACT (the fields also matches all branches)
