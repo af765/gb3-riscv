@@ -44,7 +44,7 @@
  */
 
 
-
+/*
 module adder(input1, input2, out);
 	input [31:0]	input1;
 	input [31:0]	input2;
@@ -52,7 +52,7 @@ module adder(input1, input2, out);
 
 	assign		out = input1 + input2;
 endmodule
-
+*/
 module adder_1_bit(input1, input2, cin, out, cout);
 	input input1;
 	input input2;
@@ -83,7 +83,7 @@ module adder_8_bit(input1, input2, cin, out, cout);
 	adder_1_bit a7 (input1[7], input2[7], c7, out[7], cout);
 endmodule
 
-module adder_32_bit(input1, input2, out);
+module adder(input1, input2, out);
 	input [31:0] input1;
 	input [31:0] input2;
 	output [31:0] out;
