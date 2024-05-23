@@ -33,3 +33,4 @@ clean:
 	cd benchmark; make clean
 	cd processor; make clean
 	rm -f build/*.bin
+	rm -f build/*.txt
