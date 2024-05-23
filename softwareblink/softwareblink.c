@@ -10,7 +10,7 @@ int main(void)
 	 */
 	enum
 	{
-		kSpinDelay = 400000,
+		kSpinDelay = 400,
 	};
 
 	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
