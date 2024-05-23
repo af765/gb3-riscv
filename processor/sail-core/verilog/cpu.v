@@ -349,7 +349,8 @@ module cpu(
 			.A(wb_fwd1_mux_out),
 			.B(alu_mux_out),
 			.ALUOut(alu_result),
-			.Branch_Enable(alu_branch_enable)
+			.Branch_Enable(alu_branch_enable),
+			.clk(clk)
 		);
 
 	mux2to1 lui_mux(

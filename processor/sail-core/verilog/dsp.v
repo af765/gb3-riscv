@@ -1,6 +1,7 @@
-module dsp(A, B, add, sub);
+module dsp(A, B, add, sub, clk);
     input [31:0] A;
     input [31:0] B;
+    input clk;
     output [31:0] add;
     output [31:0] sub;
 
@@ -10,8 +11,8 @@ module dsp(A, B, add, sub);
         .C(B[31:16]),
         .D(B[15:0]),
         .O(add),
-        .CLK(),
-        .CE(1'b0),
+        .CLK(clk),
+        .CE(1'b1),
         .IRSTTOP(1'b0),
         .IRSTBOT(1'b0),
         .ORSTTOP(1'b0),
@@ -55,15 +56,16 @@ defparam i_sbmac16_adder.D_REG = 1'b0 ;
 defparam i_sbmac16_adder.B_REG = 1'b0 ;
 defparam i_sbmac16_adder.A_REG = 1'b0 ;
 defparam i_sbmac16_adder.C_REG = 1'b0 ;
+defparam i_sbmac16_adder.NEG_TRIGGER = 1'b0;
 
     SB_MAC16 i_sbmac16_sub(
-        .A(A[31:16]),
-        .B(A[15:0]),
-        .C(B[31:16]),
-        .D(B[15:0]),
+        .A(B[31:16]),
+        .B(B[15:0]),
+        .C(A[31:16]),
+        .D(A[15:0]),
         .O(sub),
-        .CLK(),
-        .CE(1'b0),
+        .CLK(clk),
+        .CE(1'b1),
         .IRSTTOP(1'b0),
         .IRSTBOT(1'b0),
         .ORSTTOP(1'b0),
@@ -107,4 +109,5 @@ defparam i_sbmac16_sub.D_REG = 1'b0 ;
 defparam i_sbmac16_sub.B_REG = 1'b0 ;
 defparam i_sbmac16_sub.A_REG = 1'b0 ;
 defparam i_sbmac16_sub.C_REG = 1'b0 ;
+defparam i_sbmac16_sub.NEG_TRIGGER = 1'b0;
 endmodule
