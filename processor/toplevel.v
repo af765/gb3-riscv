@@ -61,6 +61,8 @@ module top (led);
 		.CLKHF(clk)
 	);
 
+	defparam OSCInst0.CLKHF_DIV = "0b10";	// Divide by 4 (48MHz -> 12MHz) change to "0b11" for 6MHz
+
 	/*
 	 *	Memory interface
 	 */
