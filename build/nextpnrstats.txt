@@ -51,20 +51,6 @@ Info: 	         SB_RGBA_DRV:     0/    1     0%
 Info: 	      ICESTORM_SPRAM:     0/    4     0%
 
 Info: Placed 10 cells based on constraints.
-<<<<<<< HEAD
-<<<<<<< HEAD
-Info: Creating initial placement for remaining 3097 cells.
-Info:   initial placement placed 500/3097 cells
-Info:   initial placement placed 1000/3097 cells
-Info:   initial placement placed 1500/3097 cells
-Info:   initial placement placed 2000/3097 cells
-Info:   initial placement placed 2500/3097 cells
-Info:   initial placement placed 3000/3097 cells
-Info:   initial placement placed 3097/3097 cells
-Info: Initial placement time 1.53s
-=======
-=======
->>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
 Info: Creating initial placement for remaining 2686 cells.
 Info:   initial placement placed 500/2686 cells
 Info:   initial placement placed 1000/2686 cells
@@ -73,10 +59,6 @@ Info:   initial placement placed 2000/2686 cells
 Info:   initial placement placed 2500/2686 cells
 Info:   initial placement placed 2686/2686 cells
 Info: Initial placement time 0.76s
-<<<<<<< HEAD
->>>>>>> 8087fc1 (working 12MHz clock)
-=======
->>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
 Info: Running simulated annealing placer.
 Info:   at iteration #1: temp = 1.000000, timing cost = 4170, wirelen = 67243
 Info:   at iteration #5: temp = 0.062500, timing cost = 2861, wirelen = 67184
@@ -114,43 +96,6 @@ Info:   at iteration #160: temp = 0.000091, timing cost = 2017, wirelen = 23683
 Info:   at iteration #165: temp = 0.000086, timing cost = 2031, wirelen = 22545
 Info:   at iteration #170: temp = 0.000082, timing cost = 2193, wirelen = 21327
 Info: Legalising relative constraints...
-<<<<<<< HEAD
-<<<<<<< HEAD
-Info:     moved 47 cells, 29 unplaced (after legalising chains)
-Info:        average distance 0.774771
-Info:        maximum distance 1.414214
-Info:     moved 76 cells, 0 unplaced (after replacing ripped up cells)
-Info:        average distance 1.570828
-Info:        maximum distance 14.764823
-Info:   at iteration #170: temp = 0.000070, timing cost = 1562, wirelen = 24160
-Info:   at iteration #175: temp = 0.000067, timing cost = 1561, wirelen = 22721
-Info:   at iteration #180: temp = 0.000063, timing cost = 1516, wirelen = 21600
-Info:   at iteration #185: temp = 0.000060, timing cost = 1486, wirelen = 20209
-Info:   at iteration #190: temp = 0.000057, timing cost = 1460, wirelen = 19435
-Info:   at iteration #195: temp = 0.000054, timing cost = 1308, wirelen = 18662
-Info:   at iteration #200: temp = 0.000051, timing cost = 1197, wirelen = 17940
-Info:   at iteration #205: temp = 0.000049, timing cost = 1344, wirelen = 16830
-Info:   at iteration #210: temp = 0.000046, timing cost = 1300, wirelen = 16107
-Info:   at iteration #215: temp = 0.000042, timing cost = 1280, wirelen = 15577
-Info:   at iteration #220: temp = 0.000040, timing cost = 1262, wirelen = 14990
-Info:   at iteration #225: temp = 0.000036, timing cost = 1228, wirelen = 14364
-Info:   at iteration #230: temp = 0.000027, timing cost = 1209, wirelen = 13952
-Info:   at iteration #235: temp = 0.000022, timing cost = 1188, wirelen = 13261
-Info:   at iteration #240: temp = 0.000017, timing cost = 1160, wirelen = 12553
-Info:   at iteration #245: temp = 0.000014, timing cost = 1156, wirelen = 12073
-Info:   at iteration #250: temp = 0.000007, timing cost = 1145, wirelen = 11764
-Info:   at iteration #255: temp = 0.000003, timing cost = 1141, wirelen = 11664
-Info:   at iteration #260: temp = 0.000001, timing cost = 1142, wirelen = 11614
-Info:   at iteration #265: temp = 0.000000, timing cost = 1141, wirelen = 11596
-Info:   at iteration #270: temp = 0.000000, timing cost = 1140, wirelen = 11592
-Info:   at iteration #275: temp = 0.000000, timing cost = 1139, wirelen = 11578
-Info:   at iteration #280: temp = 0.000000, timing cost = 1139, wirelen = 11575
-Info:   at iteration #285: temp = 0.000000, timing cost = 1139, wirelen = 11571
-Info:   at iteration #288: temp = 0.000000, timing cost = 1139, wirelen = 11571 
-Info: SA placement time 50.34s
-=======
-=======
->>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
 Info:     moved 85 cells, 44 unplaced (after legalising chains)
 Info:        average distance 1.691589
 Info:        maximum distance 3.162278
@@ -181,10 +126,6 @@ Info:   at iteration #275: temp = 0.000000, timing cost = 1252, wirelen = 10484
 Info:   at iteration #280: temp = 0.000000, timing cost = 1239, wirelen = 10477
 Info:   at iteration #284: temp = 0.000000, timing cost = 1239, wirelen = 10478 
 Info: SA placement time 25.70s
-<<<<<<< HEAD
->>>>>>> 8087fc1 (working 12MHz clock)
-=======
->>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
 
 Info: Max frequency for clock               'clk': 17.15 MHz (PASS at 12.00 MHz)
 Info: Max frequency for clock 'clk_proc_$glb_clk': 13.25 MHz (PASS at 12.00 MHz)
@@ -223,31 +164,6 @@ Info: Setting up routing queue.
 Info: Routing 8269 arcs.
 Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
 Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
-<<<<<<< HEAD
-<<<<<<< HEAD
-Info:       1000 |       30        969 |   30   969 |      8782|       0.17       0.17|
-Info:       2000 |      143       1856 |  113   887 |      7969|       0.23       0.40|
-Info:       3000 |      360       2639 |  217   783 |      7349|       0.22       0.63|
-Info:       4000 |      708       3291 |  348   652 |      6864|       0.22       0.85|
-Info:       5000 |     1033       3966 |  325   675 |      6331|       0.20       1.05|
-Info:       6000 |     1317       4682 |  284   716 |      5732|       0.36       1.41|
-Info:       7000 |     1446       5553 |  129   871 |      4923|       0.35       1.76|
-Info:       8000 |     1577       6422 |  131   869 |      4124|       0.27       2.02|
-Info:       9000 |     1796       7203 |  219   781 |      3463|       0.35       2.38|
-Info:      10000 |     2001       7998 |  205   795 |      2797|       0.36       2.74|
-Info:      11000 |     2327       8672 |  326   674 |      2378|       0.50       3.24|
-Info:      12000 |     2544       9455 |  217   783 |      1832|       0.43       3.67|
-Info:      13000 |     2861      10138 |  317   683 |      1472|       0.53       4.20|
-Info:      14000 |     3207      10792 |  346   654 |      1197|       0.38       4.58|
-Info:      15000 |     3638      11361 |  431   569 |      1046|       0.48       5.06|
-Info:      16000 |     4071      11928 |  433   567 |       837|       0.54       5.60|
-Info:      17000 |     4470      12529 |  399   601 |       492|       0.44       6.04|
-Info:      18000 |     4965      13034 |  495   505 |       349|       0.49       6.53|
-Info:      18596 |     5116      13480 |  151   446 |         0|       0.44       6.97|
-Info: Routing complete.
-Info: Router1 time 6.97s
-Info: Checksum: 0xc7d2a086
-=======
 Info:       1000 |       21        978 |   21   978 |      7292|       0.10       0.10|
 Info:       2000 |      128       1871 |  107   893 |      6482|       0.15       0.25|
 Info:       3000 |      330       2669 |  202   798 |      5804|       0.14       0.39|
@@ -266,27 +182,6 @@ Info:      14190 |     3699      10491 |   53   138 |         0|       0.09     
 Info: Routing complete.
 Info: Router1 time 3.13s
 Info: Checksum: 0x8db5bd86
->>>>>>> 8087fc1 (working 12MHz clock)
-=======
-Info:       1000 |       21        978 |   21   978 |      7292|       0.10       0.10|
-Info:       2000 |      128       1871 |  107   893 |      6482|       0.15       0.25|
-Info:       3000 |      330       2669 |  202   798 |      5804|       0.14       0.39|
-Info:       4000 |      648       3351 |  318   682 |      5255|       0.15       0.53|
-Info:       5000 |     1068       3931 |  420   580 |      4832|       0.17       0.70|
-Info:       6000 |     1205       4794 |  137   863 |      4031|       0.17       0.87|
-Info:       7000 |     1366       5633 |  161   839 |      3321|       0.20       1.07|
-Info:       8000 |     1499       6500 |  133   867 |      2533|       0.18       1.25|
-Info:       9000 |     1729       7270 |  230   770 |      1919|       0.23       1.48|
-Info:      10000 |     2081       7918 |  352   648 |      1430|       0.27       1.75|
-Info:      11000 |     2481       8518 |  400   600 |      1125|       0.28       2.03|
-Info:      12000 |     2898       9101 |  417   583 |       870|       0.31       2.33|
-Info:      13000 |     3363       9636 |  465   535 |       671|       0.32       2.65|
-Info:      14000 |     3646      10353 |  283   717 |       113|       0.38       3.03|
-Info:      14190 |     3699      10491 |   53   138 |         0|       0.09       3.13|
-Info: Routing complete.
-Info: Router1 time 3.13s
-Info: Checksum: 0x8db5bd86
->>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
 
 Info: Critical path report for clock 'clk' (posedge -> posedge):
 Info: curr total
