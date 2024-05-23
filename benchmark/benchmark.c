@@ -35,9 +35,9 @@ int main(void)
 	int A = 1;
 	int counter = 0;
 	bool led_state = 0;
-	while(counter<500)
+	while(counter<50000)
 	{
-		if (counter%50==0){
+		if (counter%5000==0){
 			led_state = led_toggle(led_state);
 		} 
 		else {
@@ -45,8 +45,5 @@ int main(void)
 		}
 		counter += 1;
 	}
-
-	for (int j = 0; j < 4000; j++)
-			;
 	return 0;
 }
