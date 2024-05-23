@@ -54,17 +54,18 @@
  *	field is only unique across the instructions that are actually
  *	fed to the ALU.
  */
-module alu(ALUctl, A, B, ALUOut, Branch_Enable);
+module alu(ALUctl, A, B, ALUOut, Branch_Enable, clk);
 	input [6:0]		ALUctl;
 	input [31:0]		A;
 	input [31:0]		B;
+	input clk;
 	output reg [31:0]	ALUOut;
 	output reg		Branch_Enable;
 
 	wire [31:0] dsp_addition;
 	wire [31:0] dsp_subtraction;
 
-	dsp dig_sig_pro(.A(A), .B(B), .add(dsp_addition), .sub(dsp_subtraction));
+	dsp dig_sig_pro(.A(A), .B(B), .add(dsp_addition), .sub(dsp_subtraction), .clk(clk));
 
 	/*
 	 *	This uses Yosys's support for nonzero initial values:
