@@ -55,10 +55,17 @@ module top (led);
 	/*
 	 *	Use the iCE40's hard primitive for the clock source.
 	 */
+	 /*
 	SB_HFOSC #(.CLKHF_DIV("0b11")) OSCInst0 (
 		.CLKHFEN(ENCLKHF),
 		.CLKHFPU(CLKHF_POWERUP),
 		.CLKHF(clk)
+	);
+	*/
+	SB_LFOSC OSCInst1 (
+			.CLKLFEN(ENCLKHF),
+			.CLKLFPU(CLKHF_POWERUP),
+			.CLKLF(clk)
 	);
 
 	/*
