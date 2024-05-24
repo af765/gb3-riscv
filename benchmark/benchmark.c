@@ -1,5 +1,3 @@
-#include <stdbool.h>
-
 void ALU_test(int A)
 {
 	int B = 8979;
@@ -16,34 +14,24 @@ void ALU_test(int A)
 	A = A & B; //Bitwise AND
 }
 
-bool led_toggle(bool led_state)
-{
-	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
-	if(led_state == 0)
-	{
-		led_state = 1;
-		*gDebugLedsMemoryMappedRegister = 0xFF;
-	}else{
-		led_state = 0;
-		*gDebugLedsMemoryMappedRegister = 0x00;
-	}
-	return led_state;
-}
-
 int main(void)
 {
+	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
 	int A = 1;
 	int counter = 0;
-	bool led_state = 0;
-	while(counter<50000)
+	for (int i = 0; i < 100000; i++)
 	{
-		if (counter%5000==0){
-			led_state = led_toggle(led_state);
-		} 
-		else {
-			ALU_test(A+counter);
-		}
+		*gDebugLedsMemoryMappedRegister = 0xFF;
+	}
+	while(counter<500000)
+	{
+		*gDebugLedsMemoryMappedRegister = 0x00;
+		ALU_test(A+counter);
 		counter += 1;
+	}
+	for (int i = 0; i < 100000; i++)
+	{
+		*gDebugLedsMemoryMappedRegister = 0xFF;
 	}
 	return 0;
 }
