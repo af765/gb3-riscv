@@ -1,15 +1,20 @@
-module dsp(A, B, add, sub, clk);
+module dsp(A, B, add, sub, clk, add_sub);
     input [31:0] A;
     input [31:0] B;
     input clk;
+    input add_sub;
     output [31:0] add;
     output [31:0] sub;
+
+    wire [31:0] DSP_input1;
+
+    mux2to1 muxyA(.input0(B), .input1(~B), .select(add_sub), .output(DSP_input1));
 
     SB_MAC16 i_sbmac16_adder(
         .A(A[31:16]),
         .B(A[15:0]),
-        .C(B[31:16]),
-        .D(B[15:0]),
+        .C(DSP_input1[31:16]),
+        .D(DSP_input1[15:0]),
         .O(add),
         .CLK(clk),
         .CE(1'b1),
@@ -28,7 +33,7 @@ module dsp(A, B, add, sub, clk);
         .ADDSUBTOP(1'b0), //0 for add
         .ADDSUBBOT(1'b0), //0 for add
         .CO(),
-        .CI(1'b0), //no carry in
+        .CI(add_sub), //no carry in
         //MAC cascading ports.
         .ACCUMCI(1'b0),
         .ACCUMCO(),
