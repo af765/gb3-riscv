@@ -50,5 +50,6 @@ module adder(input1, input2, out);
 	input [31:0]	input2;
 	output [31:0]	out;
 	
-	dsp dig_sig_pro(.A(input1), .B(input2), .add(out));
+	//dsp dig_sig_pro(.A(input1), .B(input2), .out(out), .add_sub(1'b0));
+	assign out = input1 + input2;
 endmodule
