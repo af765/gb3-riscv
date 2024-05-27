@@ -64,6 +64,7 @@ module alu(ALUctl, A, B, ALUOut, Branch_Enable, clk);
 
 	wire [31:0] dsp_addition;
 	wire [31:0] dsp_subtraction;
+	wire add_sub;
 
 	dsp dig_sig_pro(.A(A), .B(B), .add(dsp_addition), .sub(dsp_subtraction), .clk(clk));
 
@@ -96,12 +97,18 @@ module alu(ALUctl, A, B, ALUOut, Branch_Enable, clk);
 			/*
 			 *	ADD (the fields also match AUIPC, all loads, all stores, and ADDI)
 			 */
-			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	ALUOut = dsp_addition;
+			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	begin 
+															add_sub = 1'b0;
+															ALUOut = dsp_addition; 
+														end
 
 			/*
 			 *	SUBTRACT (the fields also matches all branches)
 			 */
-			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_SUB:	ALUOut = dsp_subtraction;
+			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_SUB:	begin 
+															add_sub = 1'b1;
+															ALUOut = dsp_subtraction; 
+														end
 
 			/*
 			 *	SLT (the fields also matches all the other SLT variants)
