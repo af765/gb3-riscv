@@ -1,0 +1,5 @@
+read_verilog verilog/register_file.v
+
+synth_ice40 -noflatten -blif register_file.blif
+
+write_json register_fil.json
