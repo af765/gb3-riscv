@@ -25,6 +25,10 @@ benchmark:
 	cd benchmark; make; make install
 	cd processor; make
 
+processorView:
+	cd template; make; make install
+	cd processor; make processorView
+
 clean:
 	cd softwareblink; make clean
 	cd hardwareblink; make clean
