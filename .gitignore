@@ -27,3 +27,6 @@
 # current build reports
 build/*
 
+processor/nextpnrstats.txt
+processor/timing.txt
+processor/yosysstats.txt
