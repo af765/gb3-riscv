@@ -46,8 +46,10 @@ module top (led);
 
 	wire		clk_proc;
 	wire		data_clk_stall;
+	wire  		pll_clk;
+	wire 		hfclk;
 	
-	wire		clk;
+	reg		clk = 1'b0;
 	reg		ENCLKHF		= 1'b1;	// Plock enable
 	reg		CLKHF_POWERUP	= 1'b1;	// Power up the HFOSC circuit
 
@@ -58,10 +60,20 @@ module top (led);
 	SB_HFOSC OSCInst0 (
 		.CLKHFEN(ENCLKHF),
 		.CLKHFPU(CLKHF_POWERUP),
-		.CLKHF(clk)
+		.CLKHF(hfclk)
 	);
 
-	defparam OSCInst0.CLKHF_DIV = "0b10";	// Divide by 4 (48MHz -> 12MHz) change to "0b11" for 6MHz
+	defparam OSCInst0.CLKHF_DIV = "0b10";
+
+	PLL phase_locked_loop(
+		.clkin(hfclk),
+		.clkout(pll_clk)
+	);
+
+	always @(posedge pll_clk) begin
+		clk <= ~clk;
+	end
+
 	/*
 	 *	Memory interface
 	 */
