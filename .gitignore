@@ -23,6 +23,7 @@
 **/*.i
 **/*.sr
 **/*.map
+**/*.txt
 
 # current build reports
 build/*
