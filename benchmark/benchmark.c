@@ -71,7 +71,7 @@ int main(void)
 	int counter = 0;
 	for (int i = 0; i < 100000; i++)
 	{
-		*gDebugLedsMemoryMappedRegister = 0xFF;
+		//*gDebugLedsMemoryMappedRegister = 0xFF;
 		continue;
 	}
 	while(counter<500000)
@@ -82,7 +82,7 @@ int main(void)
 	}
 	for (unsigned int i = 0; i < 100000; i++)
 	{
-		*gDebugLedsMemoryMappedRegister = 0xFF;
+		//*gDebugLedsMemoryMappedRegister = 0xFF;
 		continue;
 	}
 	return 0;
