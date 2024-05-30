@@ -51,12 +51,12 @@ void check_func(void){
 	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
 	int cond = 4 + 3 - 5;
 	for(int i=0; i<cond; i++){
-		*gDebugLedsMemoryMappedRegister = 0xFF;
+		//*gDebugLedsMemoryMappedRegister = 0xFF;
 
 		for (int j = 0; j < 400000; j++)
 			;
 
-		*gDebugLedsMemoryMappedRegister = 0x00;
+		//*gDebugLedsMemoryMappedRegister = 0x00;
 
 		for (int j = 0; j < 400000; j++)
 			;
