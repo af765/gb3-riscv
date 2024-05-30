@@ -1,8 +1,23 @@
-void Arithmetic_test(int A)
+void Instruction_test(int A)
 {
 	int B = 8979;
 	int C = 1;
 	unsigned int D = 17;
+	
+	unsigned char ch = 'A'; //SB
+	unsigned short sh = 0x1234; //SH
+	unsigned char *cptr = &ch;
+	unsigned short *sptr = &sh;
+	signed char ch2 = 'q';
+	signed short sh2 = 0x5678;
+	signed char *cptr2 = &ch2;
+	signed short *sptr2 = &sh2;
+
+	ch2 = *cptr2; //LB
+	sh2 = *sptr2; //LH
+
+	ch = *cptr; //LBU
+	sh = *sptr; //LHU
 
 	A += 2796; //ADDI
 	A += C; //ADD
@@ -65,7 +80,7 @@ int main(void)
 
 	//Stress the processor
 	while(counter<300000){
-		Arithmetic_test(A+counter);
+		Instruction_test(A+counter);
 		counter ++;
 	}
 	
