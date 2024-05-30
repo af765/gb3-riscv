@@ -46,10 +46,10 @@ void Instruction_test(int A)
 	}
 }
 
-//This should visably blink the LED 5 times to check the ALU is working
+//This should visably blink the LED twice to check the ALU is working
 void check_func(void){
 	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
-	int cond = 4 + 3 - 2;
+	int cond = 4 + 3 - 5;
 	for(int i=0; i<cond; i++){
 		*gDebugLedsMemoryMappedRegister = 0xFF;
 
@@ -92,7 +92,6 @@ int main(void)
 	for (int j = 0; j < 200000; j++)
 		;
 	*gDebugLedsMemoryMappedRegister = 0x00;
-	
 
 	for (int j = 0; j < 400000; j++)//spin at finish - avoid looping causing issues
 		;
