@@ -33,16 +33,17 @@ void Arithmetic_test(int A)
 
 //This should visably blink the LED 5 times to check the ALU is working
 void check_func(void){
+	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
 	int cond = 4 + 3 - 2;
-	for(i=0, i<cond, i++){
+	for(int i=0; i<cond; i++){
 		*gDebugLedsMemoryMappedRegister = 0xFF;
 
-		for (int j = 0; j < kSpinDelay; j++)
+		for (int j = 0; j < 400000; j++)
 			;
 
 		*gDebugLedsMemoryMappedRegister = 0x00;
 
-		for (int j = 0; j < kSpinDelay; j++)
+		for (int j = 0; j < 400000; j++)
 			;
 	}
 }
