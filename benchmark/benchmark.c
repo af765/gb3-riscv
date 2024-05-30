@@ -72,16 +72,18 @@ int main(void)
 	for (int i = 0; i < 100000; i++)
 	{
 		//*gDebugLedsMemoryMappedRegister = 0xFF;
+		//*gDebugLedsMemoryMappedRegister = 0xFF;
 		continue;
 	}
 	while(counter<500000)
 	{
 		*gDebugLedsMemoryMappedRegister = 0x00;
-		Instruction_test(A+counter);
+		Arithmetic_test(A+counter);
 		counter += 1;
 	}
 	for (unsigned int i = 0; i < 100000; i++)
 	{
+		//*gDebugLedsMemoryMappedRegister = 0xFF;
 		//*gDebugLedsMemoryMappedRegister = 0xFF;
 		continue;
 	}
