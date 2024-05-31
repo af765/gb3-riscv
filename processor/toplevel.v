@@ -49,8 +49,13 @@ module top (led);
 	wire  		pll_clk;
 	wire 		hfclk;
 	
+<<<<<<< HEAD
 	reg		clk = 1'b0;
 	wire	hfclk;
+=======
+	wire		clk;
+	wire		hfclk;
+>>>>>>> 288da5a (switched to positive edge for instruction lookup)
 	reg		ENCLKHF		= 1'b1;	// Plock enable
 	reg		CLKHF_POWERUP	= 1'b1;	// Power up the HFOSC circuit
 
