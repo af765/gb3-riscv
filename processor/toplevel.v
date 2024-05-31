@@ -56,13 +56,16 @@ module top (led);
 	/*
 	 *	Use the iCE40's hard primitive for the clock source.
 	 */
-	SB_HFOSC OSCInst0 (
+	SB_HFOSC #(.CLKHF_DIV("0b10")) OSCInst0 (
 		.CLKHFEN(ENCLKHF),
 		.CLKHFPU(CLKHF_POWERUP),
 		.CLKHF(hfclk)
 	);
 
-	defparam OSCInst0.CLKHF_DIV = "0b10";	// Divide by 4 (48MHz -> 12MHz) change to "0b11" for 6MHz
+	always @(posedge hfclk) begin
+		clk <= ~clk;
+	end
+
 	/*
 	 *	Memory interface
 	 */
