@@ -48,8 +48,8 @@ void Instruction_test(int A)
 
 //This should visably blink the LED twice to check the ALU is working
 void check_func(void){
-	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
-	int cond = 4 + 3 - 5;
+	//volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
+	int cond = 4 + 3 - 2;
 	for(int i=0; i<cond; i++){
 		//*gDebugLedsMemoryMappedRegister = 0xFF;
 
@@ -67,33 +67,24 @@ int main(void)
 {
 	//Verify the ALU works
 	check_func();
-
-	volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
+	//volatile unsigned int *gDebugLedsMemoryMappedRegister = (unsigned int *)0x2000;
 	int A = 1;
 	int counter = 0;
-	
-	//Flash to indicate start
-	*gDebugLedsMemoryMappedRegister = 0xFF; 
-	for (int j = 0; j < 200000; j++)
-		;
-	*gDebugLedsMemoryMappedRegister = 0x00;
-
-	//Stress the processor
-	while(counter<300000){
+	for (int i = 0; i < 100000; i++)
+	{
+		//*gDebugLedsMemoryMappedRegister = 0xFF;
+		continue;
+	}
+	while(counter<500000)
+	{
+		//*gDebugLedsMemoryMappedRegister = 0x00;
 		Instruction_test(A+counter);
 		counter ++;
 	}
-	
-	for (int j = 0; j < 200000; j++)
-		;
-
-	//Flash to indicate end
-	*gDebugLedsMemoryMappedRegister = 0xFF;
-	for (int j = 0; j < 200000; j++)
-		;
-	*gDebugLedsMemoryMappedRegister = 0x00;
-
-	for (int j = 0; j < 400000; j++)//spin at finish - avoid looping causing issues
-		;
+	for (unsigned int i = 0; i < 100000; i++)
+	{
+		//*gDebugLedsMemoryMappedRegister = 0xFF;
+		continue;
+	}
 	return 0;
 }
