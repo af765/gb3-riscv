@@ -53,7 +53,7 @@ module top (led);
 
 
 	/*
-	 *	Use the iCE40's hard primitive for the clock source. 12MHz.
+	 *	Use the iCE40's hard primitive for the clock source. 
 	 */
 	SB_HFOSC OSCInst0 (
 		.CLKHFEN(ENCLKHF),
@@ -62,10 +62,6 @@ module top (led);
 	);
 
 	defparam OSCInst0.CLKHF_DIV = "0b10";	// Divide by 4 (48MHz -> 12MHz) change to "0b11" for 6MHz
-<<<<<<< HEAD
-=======
-
->>>>>>> 8087fc1 (working 12MHz clock)
 	/*
 	 *	Memory interface
 	 */

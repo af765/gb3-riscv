@@ -64,7 +64,11 @@ Info:   initial placement placed 3097/3097 cells
 Info: Initial placement time 1.53s
 =======
 =======
+<<<<<<< HEAD
 >>>>>>> 8087fc1 (working 12MHz clock)
+=======
+>>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
+>>>>>>> 052df11e114c7d04987c927ccce1f640844725ec
 Info: Creating initial placement for remaining 2686 cells.
 Info:   initial placement placed 500/2686 cells
 Info:   initial placement placed 1000/2686 cells
@@ -76,7 +80,11 @@ Info: Initial placement time 0.76s
 <<<<<<< HEAD
 >>>>>>> 8087fc1 (working 12MHz clock)
 =======
+<<<<<<< HEAD
 >>>>>>> 8087fc1 (working 12MHz clock)
+=======
+>>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
+>>>>>>> 052df11e114c7d04987c927ccce1f640844725ec
 Info: Running simulated annealing placer.
 Info:   at iteration #1: temp = 1.000000, timing cost = 4170, wirelen = 67243
 Info:   at iteration #5: temp = 0.062500, timing cost = 2861, wirelen = 67184
@@ -150,7 +158,11 @@ Info:   at iteration #288: temp = 0.000000, timing cost = 1139, wirelen = 11571
 Info: SA placement time 50.34s
 =======
 =======
+<<<<<<< HEAD
 >>>>>>> 8087fc1 (working 12MHz clock)
+=======
+>>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
+>>>>>>> 052df11e114c7d04987c927ccce1f640844725ec
 Info:     moved 85 cells, 44 unplaced (after legalising chains)
 Info:        average distance 1.691589
 Info:        maximum distance 3.162278
@@ -184,7 +196,11 @@ Info: SA placement time 25.70s
 <<<<<<< HEAD
 >>>>>>> 8087fc1 (working 12MHz clock)
 =======
+<<<<<<< HEAD
 >>>>>>> 8087fc1 (working 12MHz clock)
+=======
+>>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
+>>>>>>> 052df11e114c7d04987c927ccce1f640844725ec
 
 Info: Max frequency for clock               'clk': 17.15 MHz (PASS at 12.00 MHz)
 Info: Max frequency for clock 'clk_proc_$glb_clk': 13.25 MHz (PASS at 12.00 MHz)
@@ -286,7 +302,11 @@ Info:      14190 |     3699      10491 |   53   138 |         0|       0.09     
 Info: Routing complete.
 Info: Router1 time 3.13s
 Info: Checksum: 0x8db5bd86
+<<<<<<< HEAD
 >>>>>>> 8087fc1 (working 12MHz clock)
+=======
+>>>>>>> 8c55ea4603860ea36da236daf707d0fe66ac0014
+>>>>>>> 052df11e114c7d04987c927ccce1f640844725ec
 
 Info: Critical path report for clock 'clk' (posedge -> posedge):
 Info: curr total
