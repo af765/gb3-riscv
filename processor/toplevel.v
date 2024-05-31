@@ -58,7 +58,7 @@ module top (led);
 	SB_HFOSC OSCInst0 (
 		.CLKHFEN(ENCLKHF),
 		.CLKHFPU(CLKHF_POWERUP),
-		.CLKHF(clk)
+		.CLKHF(hfclk)
 	);
 
 	defparam OSCInst0.CLKHF_DIV = "0b10";	// Divide by 4 (48MHz -> 12MHz) change to "0b11" for 6MHz
@@ -89,6 +89,7 @@ module top (led);
 
 	instruction_memory inst_mem( 
 		.addr(inst_in), 
+		.hfclk(hfclk),
 		.out(inst_out)
 	);
 
