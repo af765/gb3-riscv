@@ -42,9 +42,9 @@
 
 
 
-module instruction_memory(clk, addr, out);
+module instruction_memory(hfclk, addr, out);
 	input [31:0]		addr;
-	input 			clk;
+	input 			hfclk;
 	output [31:0]		out;
 
 	/*
@@ -75,7 +75,7 @@ module instruction_memory(clk, addr, out);
 		$readmemh("verilog/program.hex",instruction_memory);
 	end
 
-	always @(posedge clk) begin
+	always @(negedge hfclk) begin
 		out = instruction_memory[addr >> 2];
 	end
 endmodule
