@@ -95,12 +95,12 @@ module alu(ALUctl, A, B, ALUOut, Branch_Enable, clk);
 			/*
 			 *	ADD (the fields also match AUIPC, all loads, all stores, and ADDI)
 			 */
-			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	ALUOut = dsp_output; 
+			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_ADD:	ALUOut = A + B;//dsp_output; 
 
 			/*
 			 *	SUBTRACT (the fields also matches all branches)
 			 */
-			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_SUB:	ALUOut = dsp_output; 
+			`kSAIL_MICROARCHITECTURE_ALUCTL_3to0_SUB:	ALUOut = A-B; //dsp_output; 
 
 			/*
 			 *	SLT (the fields also matches all the other SLT variants)
