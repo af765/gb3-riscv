@@ -102,7 +102,7 @@ module top (led);
 
 	instruction_memory inst_mem( 
 		.addr(inst_in), 
-		.hfclk(hfclk),
+		.hfclk(pll_clk),
 		.out(inst_out)
 	);
 
